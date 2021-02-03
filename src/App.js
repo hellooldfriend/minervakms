@@ -8,7 +8,6 @@ function App() {
     return (
         <div>
             <button onClick={() => setShowModal(true)}>Open modal</button>
-
             <SearchEditor
                 visible={showModal}
                 onClick={() => setShowModal(false)}
