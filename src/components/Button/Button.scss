@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.button {
+    padding: 8px 12px;
+    color: $color_button_default;
+    background: $background_button_default;
+    border-radius: 3px;
+    font-weight: 700;
+
+    &._basic {
+        border: 1px solid;
+        transition: all .275s ease-in-out;
+
+        &:hover {
+            color: $color_secondary;
+            border-color: $color_secondary;
+            background: #fff;
+        }
+    }
+
+
+    &._success {
+        background: $background_button_success;
+    }
+
+    &._warning {
+        background: $background_button_warning;
+    }
+
+    &._disabled {
+        background: rgba(52, 66, 155, 0.5);
+        opacity: 0.5;
+        cursor: default;
+    }
+}

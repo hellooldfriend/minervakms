@@ -1,0 +1,48 @@
+
+// Media queries breaks
+$screen_sm: 414px;
+$screen_md: 768px;
+
+
+// Background
+$background_button_default: #344273;
+$background_button_success: #5E9574;
+$background_button_warning: #955E5E;
+
+$background_form_basic: #EFEFEF;
+
+
+// Colors
+$color_button_default: #fff;
+$color_button_secondary: #955E5E;
+
+$color_default: #000;
+$color_secondary: #344273;
+$color_info: #787878;
+$color_muted: rgba(52, 66, 115, 0.5);
+$color_input_placeholder: rgba(52, 66, 115, 0.5);
+$color_error: #C23E42;
+
+$border_input_color_basic: rgba(52, 66, 115, 0.5);
+$border_input_color_focused: #344273;
+
+
+
+// Spacing
+$pt-0: 0;
+$pt-1: 10px;
+$pt-2: 20px;
+
+$m-0: 0;
+$m-1: 10px;
+$m-2: 20px;
+
+$mb-1: $m-1;
+
+// Fonts
+$font_size_basic: 16px;
+$font_size_small: 14px;
+$font_size_subtitle: 20px;
+
+
+
