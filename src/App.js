@@ -5,7 +5,6 @@ import SearchEditor from './components/SearchEditor'
 
 function App() {
     const [showModal, setShowModal] = useState(true)
-
     return (
         <div>
             <button onClick={() => setShowModal(true)}>Open modal</button>
