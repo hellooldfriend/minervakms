@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/minervakms/static/css/main.5169cc32.chunk.css",
+    "main.css": "/minervakms/static/css/main.8ca52991.chunk.css",
     "main.js": "/minervakms/static/js/main.46e31221.chunk.js",
     "main.js.map": "/minervakms/static/js/main.46e31221.chunk.js.map",
     "runtime-main.js": "/minervakms/static/js/runtime-main.ecf4ff69.js",
@@ -10,13 +10,13 @@
     "static/js/3.0f79dc09.chunk.js": "/minervakms/static/js/3.0f79dc09.chunk.js",
     "static/js/3.0f79dc09.chunk.js.map": "/minervakms/static/js/3.0f79dc09.chunk.js.map",
     "index.html": "/minervakms/index.html",
-    "static/css/main.5169cc32.chunk.css.map": "/minervakms/static/css/main.5169cc32.chunk.css.map",
+    "static/css/main.8ca52991.chunk.css.map": "/minervakms/static/css/main.8ca52991.chunk.css.map",
     "static/js/2.ed056dea.chunk.js.LICENSE.txt": "/minervakms/static/js/2.ed056dea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ecf4ff69.js",
     "static/js/2.ed056dea.chunk.js",
-    "static/css/main.5169cc32.chunk.css",
+    "static/css/main.8ca52991.chunk.css",
     "static/js/main.46e31221.chunk.js"
   ]
 }
