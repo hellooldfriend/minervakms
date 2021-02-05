@@ -6,6 +6,10 @@
     background: $background_form_basic;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 
+    @media(max-width: $screen_sm) {
+        height: 100%;
+    }
+
     h2 {
         font-size: $font_size_subtitle;
         font-weight: 700;
@@ -19,6 +23,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
         box-sizing: border-box;
+
+        @media(max-width: $screen_sm) {
+            padding-right: 2.2rem;
+        }
     }
 
     &-top {
@@ -50,6 +58,10 @@
         &-item {
             margin-bottom: 2.8px;
 
+            @media(max-width: $screen_sm) {
+                margin-bottom: 5px;
+            }
+
             .input {
                 display: inline-flex;
                 padding-bottom: 6px;
@@ -62,5 +74,16 @@
             margin-right: $m-2;
             letter-spacing: -.1px;
         }
+    }
+
+
+    &-main {
+        @media(max-width: $screen_sm) {
+            height: calc(100% - 55px);
+        }
+    }
+
+    &-footer {
+
     }
 }

@@ -59,7 +59,6 @@
         background: transparent;
         outline: none;
         transition: border-bottom-color .275s;
-        letter-spacing: -.5px;
 
         &:focus {
             border-bottom-color: $border_input_color_focused;

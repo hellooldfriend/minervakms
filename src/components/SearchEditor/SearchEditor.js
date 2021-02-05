@@ -66,60 +66,64 @@ const SearchEditor = (props) => {
     return (
         <Modal {...props}>
             <div className="search_editor">
-                <h2 title="Редактирование группы синонимов поисковых фраз">Редактирование группы синонимов поисковых фраз</h2>
+                <div className="search_editor-main">
+                    <h2 title="Редактирование группы синонимов поисковых фраз">Редактирование группы синонимов поисковых фраз</h2>
 
-                <hr/>
+                    <hr/>
 
-                <div className="search_editor-top">
-                    <div className="search_editor-top-title">
-                        Синонимы
-                        <span className="search_editor-top-icon">
-                            <IconInfo />
-                        </span>
-                    </div>
-                    {activeItem === null &&
-                        <div className="search_editor-top-input">
-                            <Input
-                                mode={'add'}
-                                onChange={handleCreateItem}
-                                onClick={() => {}}
-                            />
+                    <div className="search_editor-top">
+                        <div className="search_editor-top-title">
+                            Синонимы
+                            <span className="search_editor-top-icon">
+                                <IconInfo />
+                            </span>
                         </div>
-                    }
-
-                </div>
-
-                <div className="search_editor-list">
-                    {items.map((item, index) => {
-                        return (
-                            <div className="search_editor-list-item">
-                                <Input key={new Date().toString() + index}
-                                    editing={activeItem === index}
-                                    value={item.value}
-                                    onClick={() => {
-                                       if(activeItem === index) {
-                                           setActiveItem(null)
-                                       } else {
-                                           setActiveItem(index)
-                                       }
-                                    }}
-                                    onChange={value => handleChange(value, index)}
+                        {activeItem === null &&
+                            <div className="search_editor-top-input">
+                                <Input
+                                    mode={'add'}
+                                    onChange={handleCreateItem}
+                                    onClick={() => {}}
                                 />
                             </div>
-                        )
-                    })}
+                        }
+
+                    </div>
+
+                    <div className="search_editor-list">
+                        {items.map((item, index) => {
+                            return (
+                                <div className="search_editor-list-item">
+                                    <Input key={new Date().toString() + index}
+                                        editing={activeItem === index}
+                                        value={item.value}
+                                        onClick={() => {
+                                           if(activeItem === index) {
+                                               setActiveItem(null)
+                                           } else {
+                                               setActiveItem(index)
+                                           }
+                                        }}
+                                        onChange={value => handleChange(value, index)}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
 
-                <hr/>
-
-                <div className="search_editor-buttons">
-                    <Button success
-                        onClick={handleSubmit}
-                    >сохранить изменения</Button>
-                    <Button warning
-                        onClick={handleClearAll}
-                    >очистить синонимы</Button>
+                <div className="search_editor-footer">
+                    <hr/>
+                    <div className="search_editor-buttons">
+                        <Button success
+                                onClick={handleSubmit}
+                        >сохранить изменения</Button>
+                        <Button warning
+                                onClick={handleClearAll}
+                        >очистить синонимы</Button>
+                    </div>
                 </div>
+
             </div>
         </Modal>
 

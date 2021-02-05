@@ -42,5 +42,10 @@
         padding: 0;
         border: none;
         cursor: pointer;
+
+        @media(max-width: $screen_sm) {
+            top: 1.25rem;
+            right: 1.25rem;
+        }
     }
 }
