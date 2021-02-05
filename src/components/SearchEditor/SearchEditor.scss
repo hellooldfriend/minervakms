@@ -9,10 +9,10 @@
     h2 {
         font-size: $font_size_subtitle;
         font-weight: 700;
-        letter-spacing: -1.2px;
+        //letter-spacing: -1.2px;
 
         margin: $m-0;
-        margin-bottom: 13px;
+        margin-bottom: 8px;
         padding-right: 2rem;
 
         white-space: nowrap;
@@ -27,7 +27,7 @@
             margin: 0;
             font-weight: 700;
             color: #4F4f4F;
-            letter-spacing: -1.2px;
+            //letter-spacing: -1.2px;
         }
 
         &-icon {
@@ -35,22 +35,32 @@
             display: inline-block;
             vertical-align: middle;
         }
+
+        &-input {
+            position: relative;
+            top: -5px;
+        }
     }
 
     &-list {
         position: relative;
-        top: -3px;
-        margin-bottom: 100px;
+        top: -7px;
+        margin-bottom: 98px;
 
         &-item {
             margin-bottom: 2.8px;
+
+            .input {
+                display: inline-flex;
+                padding-bottom: 6px;
+            }
         }
     }
 
     &-buttons {
         & > .button {
             margin-right: $m-2;
-            letter-spacing: -.2px;
+            letter-spacing: -.1px;
         }
     }
 }

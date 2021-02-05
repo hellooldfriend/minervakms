@@ -13,7 +13,7 @@
     position: relative;
     margin-bottom: 1px;
     border-radius: 3px;
-    letter-spacing: -1.2px;
+    //letter-spacing: -1.2px;
 
     &._active {
         background: none;
@@ -27,14 +27,9 @@
     }
 
     &-icons {
-        height: fit-content;
         position: absolute;
         right: 6px;
-        top: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-
+        top: 11px;
     }
 
     &-error {
@@ -56,11 +51,11 @@
         width: 100%;
         font-size: $font_size_basic;
         box-sizing: border-box;
-        padding: $pt-1;
+        padding: $pt-1 $pt-1 8px 0;
         padding-left: 0;
         border-color: transparent;
         border-bottom: 1px solid $border_input_color_basic;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         background: transparent;
         outline: none;
         transition: border-bottom-color .275s;
@@ -94,5 +89,6 @@
         color: $color_info;
         font-weight: 400;
         font-size: $font_size_small;
+        margin-bottom: -3px;
     }
 }

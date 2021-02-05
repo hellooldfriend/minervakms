@@ -57,10 +57,11 @@ const Input = (props) => {
         cls.push('_active')
     }
 
-    const renderInput = () => {
+    const renderInput = (className) => {
         return (
             <>
                 <input
+                    className={className}
                     type="text"
                     value={value}
                     placeholder={'Введите название'}

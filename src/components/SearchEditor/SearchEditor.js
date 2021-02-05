@@ -78,11 +78,13 @@ const SearchEditor = (props) => {
                         </span>
                     </div>
                     {activeItem === null &&
-                        <Input
-                            mode={'add'}
-                            onChange={handleCreateItem}
-                            onClick={() => {}}
-                        />
+                        <div className="search_editor-top-input">
+                            <Input
+                                mode={'add'}
+                                onChange={handleCreateItem}
+                                onClick={() => {}}
+                            />
+                        </div>
                     }
 
                 </div>
