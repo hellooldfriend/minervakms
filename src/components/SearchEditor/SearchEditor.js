@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './SearchEditor.scss'
 
 import Modal from '../Modal'
@@ -13,8 +13,7 @@ import { getItems, setItems } from '../../redux/actions'
 
 const SearchEditor = (props) => {
     const [activeItem, setActiveItem] = useState(null)
-    const [items, setItems] = useState(props.items)
-
+    const { items, setItems, getItems } = props
 
     // functions
     const removeItem = (index) => {
@@ -53,12 +52,12 @@ const SearchEditor = (props) => {
     }
 
     const handleSubmit = () => {
-        props.setItems(items)
+        setItems(items)
         alert('Items saved')
     }
 
     const handleClearAll = () => {
-        props.setItems([])
+        setItems([])
         alert('Items removed')
     }
     // Main render
@@ -93,8 +92,8 @@ const SearchEditor = (props) => {
                     <div className="search_editor-list">
                         {items.map((item, index) => {
                             return (
-                                <div className="search_editor-list-item">
-                                    <Input key={new Date().toString() + index}
+                                <div className="search_editor-list-item" key={new Date().toString() + index}>
+                                    <Input
                                         editing={activeItem === index}
                                         value={item.value}
                                         onClick={() => {
@@ -116,10 +115,10 @@ const SearchEditor = (props) => {
                     <hr/>
                     <div className="search_editor-buttons">
                         <Button success
-                                onClick={handleSubmit}
+                            onClick={handleSubmit}
                         >сохранить изменения</Button>
                         <Button warning
-                                onClick={handleClearAll}
+                            onClick={handleClearAll}
                         >очистить синонимы</Button>
                     </div>
                 </div>
