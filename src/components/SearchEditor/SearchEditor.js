@@ -8,12 +8,12 @@ import { IconInfo } from '../../Icons'
 
 
 import { connect } from 'react-redux'
-import { getItems, setItems } from '../../redux/actions'
+import { getItems, setItems, saveToLS } from '../../redux/actions'
 
 
 const SearchEditor = (props) => {
     const [activeItem, setActiveItem] = useState(null)
-    const { items, setItems, getItems } = props
+    const { items, setItems } = props
 
     // functions
     const removeItem = (index) => {
@@ -52,12 +52,13 @@ const SearchEditor = (props) => {
     }
 
     const handleSubmit = () => {
-        setItems(items)
+        saveToLS(items)
         alert('Items saved')
     }
 
     const handleClearAll = () => {
         setItems([])
+        saveToLS([])
         alert('Items removed')
     }
     // Main render
@@ -66,7 +67,9 @@ const SearchEditor = (props) => {
         <Modal {...props}>
             <div className="search_editor">
                 <div className="search_editor-main">
-                    <h2 title="Редактирование группы синонимов поисковых фраз">Редактирование группы синонимов поисковых фраз</h2>
+                    <h2 title="Редактирование группы синонимов поисковых фраз">
+                        Редактирование группы синонимов поисковых фраз
+                    </h2>
 
                     <hr/>
 
