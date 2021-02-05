@@ -13,10 +13,4 @@ export const setItems = (items) => {
         payload: items,
     }
 }
-
-export const loadItemsFromLocalStorage = () => {
-}
-
-export const saveStateToLocalStorage = (items) => {
-
 }

@@ -1,4 +1,2 @@
 export const GET_ITEMS = 'SYNONYMS/GET_ITEMS'
 export const SET_ITEMS = 'SYNONYMS/SAVE_ITEMS'
-
-export const LOAD_FROM_LOCAL_STORAGE = 'SYNONYMS/'

@@ -5,6 +5,7 @@ import Button from '../Button'
 import { IconEdit, IconTrash, IconClose, IconError } from '../../Icons'
 
 
+
 const Input = (props) => {
     const mode = props.mode || 'edit'
 
