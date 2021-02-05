@@ -7,11 +7,14 @@ import Input from '../Input'
 import { IconInfo } from '../../Icons'
 
 
-const ITEMS_LOCAL_STORAGE_URL = '__MINERVA/ITEMS__'
+import { connect } from 'react-redux'
+import { getItems, setItems } from '../../redux/actions'
+
 
 const SearchEditor = (props) => {
     const [activeItem, setActiveItem] = useState(null)
-    const [items, setItems] = useState(JSON.parse(localStorage.getItem(ITEMS_LOCAL_STORAGE_URL)) || [])
+    const [items, setItems] = useState(props.items)
+
 
     // functions
     const removeItem = (index) => {
@@ -21,7 +24,6 @@ const SearchEditor = (props) => {
 
     const saveItems = (items) => {
         setItems(items)
-        // localStorage.setItem(ITEMS_LOCAL_STORAGE_URL, JSON.stringify(items))
     }
 
     // handlers
@@ -51,13 +53,13 @@ const SearchEditor = (props) => {
     }
 
     const handleSubmit = () => {
-        localStorage.setItem(ITEMS_LOCAL_STORAGE_URL, JSON.stringify(items))
+        props.setItems(items)
         alert('Items saved')
     }
 
     const handleClearAll = () => {
-        setItems([])
-        localStorage.setItem(ITEMS_LOCAL_STORAGE_URL, JSON.stringify([]))
+        props.setItems([])
+        alert('Items removed')
     }
     // Main render
 
@@ -88,34 +90,33 @@ const SearchEditor = (props) => {
                 <div className="search_editor-list">
                     {items.map((item, index) => {
                         return (
-                            <Input key={new Date().toString() + index}
-                                editing={activeItem === index}
-                                value={item.value}
-                                onClick={() => {
-                                    if(activeItem === index) {
-                                        setActiveItem(null)
-                                    } else {
-                                        setActiveItem(index)
-                                    }
-                                }}
-                                onChange={value => handleChange(value, index)}
-                            />
+                            <div className="search_editor-list-item">
+                                <Input key={new Date().toString() + index}
+                                    editing={activeItem === index}
+                                    value={item.value}
+                                    onClick={() => {
+                                       if(activeItem === index) {
+                                           setActiveItem(null)
+                                       } else {
+                                           setActiveItem(index)
+                                       }
+                                    }}
+                                    onChange={value => handleChange(value, index)}
+                                />
+                            </div>
                         )
                     })}
                 </div>
-
-
-
 
                 <hr/>
 
                 <div className="search_editor-buttons">
                     <Button success
                         onClick={handleSubmit}
-                    >Сохранить изменения</Button>
+                    >сохранить изменения</Button>
                     <Button warning
                         onClick={handleClearAll}
-                    >Очистить синонимы</Button>
+                    >очистить синонимы</Button>
                 </div>
             </div>
         </Modal>
@@ -123,4 +124,18 @@ const SearchEditor = (props) => {
     )
 }
 
-export default SearchEditor
+
+const mapStateToProps = state => {
+    return {
+        items: state.items,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getItems: (items) => dispatch(getItems(items)),
+        setItems: (items) => dispatch(setItems(items)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchEditor)

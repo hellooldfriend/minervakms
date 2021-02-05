@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'Circe';
-    src: url('/fonts/Circe-Regular.woff') format('woff'),
-         url('/fonts/Circe-Regular.woff2') format('woff2');
+    src: url('../../fonts/Circe-Regular.woff') format('woff'),
+         url('../../fonts/Circe-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Circe';
-    src: url('/fonts/Circe-Bold.woff') format('woff'),
-         url('/fonts/Circe-Bold.woff2') format('woff2');
+    src: url('../../fonts/Circe-Bold.woff') format('woff'),
+         url('../../fonts/Circe-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
@@ -46,5 +46,5 @@ hr {
 }
 
 ._right {
-    right: 0;
+    right: 6px;
 }

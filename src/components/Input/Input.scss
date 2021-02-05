@@ -11,8 +11,9 @@
     padding-right: 55px;
     font-weight: 700;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     border-radius: 3px;
+    letter-spacing: -1.2px;
 
     &._active {
         background: none;
@@ -23,6 +24,17 @@
     .icon-fill {
         opacity: 0.5;
         transition: opacity 0s;
+    }
+
+    &-icons {
+        height: fit-content;
+        position: absolute;
+        right: 6px;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+
     }
 
     &-error {
@@ -48,10 +60,11 @@
         padding-left: 0;
         border-color: transparent;
         border-bottom: 1px solid $border_input_color_basic;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         background: transparent;
         outline: none;
         transition: border-bottom-color .275s;
+        letter-spacing: -.5px;
 
         &:focus {
             border-bottom-color: $border_input_color_focused;

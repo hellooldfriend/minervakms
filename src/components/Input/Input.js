@@ -109,7 +109,7 @@ const Input = (props) => {
                 :
                 <>
                     <div className="input-value">{value}</div>
-                    <span className="input-buttons _absolute _right">
+                    <span className="input-buttons input-icons">
                         <button
                             onClick={() => props.onClick()}
                         >
