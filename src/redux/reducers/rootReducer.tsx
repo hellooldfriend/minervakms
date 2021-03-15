@@ -1,10 +1,13 @@
 import { GET_ITEMS, SET_ITEMS } from '../types'
+import { IAction, IAppState } from '../../types'
 
-const initialState = {
+
+const initialState: IAppState = {
     items: [],
 }
 
-export const rootReducer = (state = initialState, action) => {
+
+export default function rootReducer(state = initialState, action: IAction) {
     switch(action.type) {
         case GET_ITEMS:
             return {

@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {ReactNode} from 'react'
 import './Button.scss'
 
 import { IconLoader } from '../../Icons'
 
-const Button = (props) => {
+type Props = {
+    children: ReactNode,
+    onClick: () => void,
+    success?: boolean,
+    disabled?: boolean,
+    warning?: boolean,
+    loading?: boolean,
+    className?: string,
+}
+
+
+const Button = (props: Props) => {
 
     const cls = ['button']
 

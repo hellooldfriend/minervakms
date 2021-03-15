@@ -9,36 +9,47 @@ import { IconInfo } from '../../Icons'
 
 import { connect } from 'react-redux'
 import { getItems, setItems, saveToLS } from '../../redux/actions'
+import { IItem, IAppState } from '../../types'
+import { Dispatch } from 'redux'
 
 
-const SearchEditor = (props) => {
-    const [activeItem, setActiveItem] = useState(null)
+type Props = {
+    items: IItem[],
+    setItems: (items: IItem[]) => void,
+    visible: boolean,
+    onClick: () => void,
+}
+
+const SearchEditor = (props: Props) => {
+    const [activeItem, setActiveItem] = useState<number | null>(null)
     const { items, setItems } = props
 
     // functions
-    const removeItem = (index) => {
+    const removeItem = (index: number) => {
         const updatedItems = items.filter((_, i) => i !== index)
         saveItems(updatedItems)
     }
 
-    const saveItems = (items) => {
+    const saveItems = (items: IItem[]) => {
         setItems(items)
     }
 
     // handlers
-    const handleCreateItem = (value) => {
-        const item = {id: items.length + 1, value}
-        saveItems([item, ...items])
+    const handleCreateItem = (value: string | null) => {
+        if(value) {
+            const item = {id: items.length + 1, value}
+            saveItems([item, ...items])
+        }
     }
 
-    const handleChange = (value, index) => {
+    const handleChange = (value: string | null, index: number) => {
         if(value === null) {
             removeItem(index)
             return
         }
 
-        let updatedItems = []
-        let item = null
+        let updatedItems
+        let item
 
         if(!items.length) {
             item = {id: 1, value}
@@ -97,7 +108,7 @@ const SearchEditor = (props) => {
                             return (
                                 <div className="search_editor-list-item" key={new Date().toString() + index}>
                                     <Input
-                                        editing={activeItem === index}
+                                        editing={activeItem !== null && activeItem === index}
                                         value={item.value}
                                         onClick={() => {
                                            if(activeItem === index) {
@@ -133,16 +144,17 @@ const SearchEditor = (props) => {
 }
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: IAppState) => {
     return {
         items: state.items,
     }
 }
 
-const mapDispatchToProps = dispatch => {
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        getItems: (items) => dispatch(getItems(items)),
-        setItems: (items) => dispatch(setItems(items)),
+        getItems: (items: IItem[]) => dispatch(getItems(items)),
+        setItems: (items: IItem[]) => dispatch(setItems(items)),
     }
 }
 

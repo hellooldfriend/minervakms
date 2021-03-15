@@ -3,7 +3,7 @@ import './App.css'
 
 
 import { Provider } from 'react-redux'
-import { store } from './store'
+import store from './store'
 
 import SearchEditor from './components/SearchEditor'
 
@@ -24,4 +24,3 @@ function App() {
 }
 
 export default App
-window.store = store

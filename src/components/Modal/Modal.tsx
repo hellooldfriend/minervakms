@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ReactNode} from 'react'
 import './Modal.scss'
 
 import { IconClose } from '../../Icons'
@@ -12,7 +12,13 @@ type Props = {
 }
  */
 
-const Modal = ({ children, visible, onClick }) => {
+type Props = {
+    children: ReactNode,
+    visible: boolean,
+    onClick: () => void,
+}
+
+const Modal = ({ children, visible, onClick }: Props) => {
     const cls = ['modal']
 
     if(!visible) {

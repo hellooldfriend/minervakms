@@ -4,9 +4,15 @@ import './Input.scss'
 import Button from '../Button'
 import { IconEdit, IconTrash, IconClose, IconError } from '../../Icons'
 
+type Props = {
+    mode?: string,
+    value?: string,
+    editing?: boolean,
+    onChange: (value: string | null) => void,
+    onClick: (value?: any) => void,
+}
 
-
-const Input = (props) => {
+const Input = (props: Props) => {
     const mode = props.mode || 'edit'
 
     const [value, setValue] = useState(props.value || '')
@@ -16,7 +22,7 @@ const Input = (props) => {
 
     useEffect(() => {
         if(editing !== props.editing) {
-            setEditing(props.editing)
+            setEditing(!!props.editing)
         }
     }, [props.editing])
 
@@ -36,11 +42,11 @@ const Input = (props) => {
 
     const handleCancel = () => {
         setEditing(false)
-        setValue(props.value)
+        setValue(props.value || '')
         props.onClick(null)
     }
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: any) => {
         setShowError(false)
 
         if(e.keyCode === 13) {
@@ -58,7 +64,7 @@ const Input = (props) => {
         cls.push('_active')
     }
 
-    const renderInput = (className) => {
+    const renderInput = (className?: string) => {
         return (
             <>
                 <input
