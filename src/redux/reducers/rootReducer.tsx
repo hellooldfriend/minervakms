@@ -1,5 +1,5 @@
 import { GET_ITEMS, SET_ITEMS } from '../types'
-import { IAction, IAppState } from '../../types'
+import { IAction, IAppState, IItem } from '../../types'
 
 
 const initialState: IAppState = {

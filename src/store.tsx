@@ -9,7 +9,9 @@ const persistedState: IAppState = {
     items: savedItems
 }
 
+// TODO: find a better solution
 const store = createStore(
+    // @ts-ignore
     rootReducer,
     persistedState,
 )
